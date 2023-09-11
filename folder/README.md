@@ -10,7 +10,7 @@
 [Сайт СибГУ](https://www.sibsau.ru/)
 
 
-![это мы](https://i.ytimg.com/vi/2oHdAR4ZI0Y/maxresdefault.jpg)
+![это мы](https://img.milli.az/2017/05/05/541890.jpg)
 
 
 1. Мустафаев Фэган
