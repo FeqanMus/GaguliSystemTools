@@ -11,18 +11,15 @@ print("Добро пожаловать ", s) #вывод введеного зн
 print("\nЗадание 6")
 x = int(input("Часов в пути: ")) #ввод с клавиатуры целочисленное значение
 y =  int(input("Минут в пути: ")) #ввод с клавиатуры целочисленное значение
-print(f'В пути Доктор Иванов проводит {x*60 + y} минут')  #вывод произмедения значений
+print(f'В пути Доктор Иванов проводит {(x*60 + y)*2} минут')  #вывод произмедения значений
 
 #7
 print("\nЗадание 7")
 a = False
 b = True
 c = False
-not a or b and c
-if not a or (b and c):
-    print('false')
-else:
-    print('true')
+print(not a or b and c)
+print((not a or b) and c)
 
 #8
 print("\nЗадание 8")
@@ -61,8 +58,14 @@ if X > Y: #условие для проверки какое из значени
     max_peices = X #присваиваем переменной значение Х
 else:
     max_peices = Y #присваиваем переменной значение У
-peices_count = max_peices * 2 #подсчет необходимых кусочков
-print(f"Необходимо {peices_count} кусочков пиццы")
+
+while (True):
+    if ((max_peices % X == 0) and (max_peices % Y == 0)):
+        lcm = max_peices
+        break
+    max_peices += 1
+nok = lcm
+print(f"Нужно кусков: {X} и {Y}: {nok}")
 
 #12
 print("\nЗадание 12")
@@ -71,7 +74,7 @@ for i in range(2, 21, 2): #цикл начальное число в цикле 
 
 #13
 print("\nЗадание 13")
-a, b, c, d = [int(input()) for i in range(4)]  
+a, b, c, d = [int(input()) for i in range(4)]
 print('', end='\t')
 for j in range(c, d + 1):
     print(j, end='\t')
