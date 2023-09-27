@@ -1,0 +1,16 @@
+Скачиваем образ Redis
+docker pull redis:latest
+
+
+создаем контейнер Redis
+docker run --name my-redis -d redis
+
+
+Скачиваем образ MongoDB
+docker pull mongo:latest
+
+создаем контейнер MongoDB
+docker run --name my-mongo -d mongo
+
+запустили консоль MongoDB и узнали версию
+docker exec -it my-mongo mongosh
