@@ -1,0 +1,72 @@
+Задание 1.
+
+# Получаем строку от пользователя
+input_string = input("Введите строку: ")
+
+# Удаляем пробелы из строки и приводим ее к нижнему регистру
+input_string = input_string.replace(" ", "").lower()
+
+# Проверяем, является ли строка палиндромом
+if input_string == input_string[::-1]:
+    print("Да, это палиндром.")
+else:
+    print("Нет, это не палиндром.")
+
+Задание 2.
+
+print('Введите матрицу: \n')
+mat = []
+
+# Считываем строки матрицы и добавляем их в список mat
+while True:
+    s = input()
+    if s == 'end':
+        break
+    else:
+        mat.append(list(map(int, s.split())))
+
+# Проходим по каждой строке матрицы и выводим минимальное значение
+for i in range(len(mat)):
+    print(min(mat[i]))
+
+Задание 3.
+
+# Создаем пустой список для хранения слов и пустой словарь для подсчета повторений
+words = []
+word_count = {}
+
+# Считываем строку, приводим её к нижнему регистру и разбиваем на слова
+words = input().lower().split()
+
+# Проходим по каждому слову
+for i in range(len(words)):
+    word = words[i]
+    # Если слово уже есть в словаре, увеличиваем его частоту на 1
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        # Если слова нет в словаре, добавляем его и устанавливаем частоту в 1
+        word_count[word] = 1
+
+# Выводим результаты
+for key, value in word_count.items():
+    print(key, value)
+
+Задание 4.
+
+import cryptography
+import pymysql
+connect = pymysql.connect(host="127.0.0.1",
+                          user="root",
+                          password="pass",
+                          db="my_db")
+
+pip install cryptography
+
+with connect:
+    year = input("Введите год: ")
+    sql = "select first_name, last_name, date_of_birth from user where YEAR(date_of_birth) = %s"
+    cur = connect.cursor()
+    cur.execute(sql, year)
+    for rec in cur:
+        print(rec[0], rec[1])
